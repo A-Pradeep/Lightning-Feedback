@@ -8,7 +8,7 @@ import DashboardShell from "@/components/DashboardShell";
 import fetcher from "@/utils/fetcher";
 import SiteTable from "@/components/SiteTable";
 
-function dashboard() {
+function Dashboard() {
   const { user } = UseAuth();
   const { data } = useSWR(user ? ["/api/sites", user.token] : null, fetcher);
   if (!data) {
@@ -41,4 +41,4 @@ function dashboard() {
   );
 }
 
-export default dashboard;
+export default Dashboard;
