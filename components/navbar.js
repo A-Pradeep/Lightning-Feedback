@@ -18,13 +18,14 @@ import { UseAuth } from "@/lib/auth";
 function Navbar() {
   const { user, signOut } = UseAuth();
   const { colorMode, toggleColorMode } = useColorMode();
+
   return (
     <div>
       <Flex justify="space-between" px="7" py="4" alignItems="center">
         <Box display="flex" gridGap="4">
           <CompanyLogo boxSize={6} />
-          <Link>Feedback</Link>
-          <Link>Sites</Link>
+          <Link href="/feedback">Feedback</Link>
+          <Link href="/">Sites</Link>
         </Box>
         <Box display="flex" gridGap="4" alignItems="center">
           <Button
