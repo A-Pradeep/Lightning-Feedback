@@ -1,7 +1,7 @@
 import { format, parseISO } from "date-fns";
 import Link from "next/link";
 
-const { Box } = require("@chakra-ui/layout");
+const { Box, Link: CLink } = require("@chakra-ui/layout");
 const { Td, Table, Tr, Th } = require("./Table");
 
 const SiteTable = ({ sites }) => {
@@ -22,8 +22,10 @@ const SiteTable = ({ sites }) => {
             <Td fontWeight="medium">{site.siteName}</Td>
             <Td>{site.url}</Td>
             <Td>
-              <Link href="/s/[siteId]" as={` /s/${site.id}`} passHref>
-                View Feedback
+              <Link href="/s/[siteId]" as={`/s/${site.id}`} passHref>
+                <CLink color="teal.400" fontWeight="bold">
+                  View Feedback
+                </CLink>
               </Link>
             </Td>
             <Td>{format(parseISO(site.createdAt), "PPpp")}</Td>
