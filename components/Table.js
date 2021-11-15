@@ -7,7 +7,6 @@ export const Th = (props) => (
     fontSize="xs"
     color="gray.500"
     fontWeight="medium"
-    borderRadius={8}
     px={4}
     {...props}
   />
@@ -16,7 +15,6 @@ export const Th = (props) => (
 export const Td = (props) => (
   <Box
     as="td"
-    color="gray.900"
     p={4}
     borderTop="1px solid"
     borderTopColor="gray.100"
@@ -40,7 +38,6 @@ export const Table = (props) => {
     <Box
       as="table"
       textAlign="left"
-      backgroundColor="white"
       mx={0}
       borderRadius={8}
       borderBottom={0}
