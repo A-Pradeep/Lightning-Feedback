@@ -43,15 +43,14 @@ function AddSiteModal({ children }) {
       siteName,
       url,
     };
-    createSite(newSite);
+    const { id } = createSite(newSite);
+    console.log(id);
     setLoading(false);
     onClose();
     showToast();
     mutate(
       ["/api/sites", auth.user.token],
-      async (data) => {
-        return { sites: [...data.sites, newSite] };
-      },
+      async (data) => ({ sites: [...data.sites, { id, ...newSite }] }),
       false
     );
     reset();
