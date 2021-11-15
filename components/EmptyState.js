@@ -12,8 +12,8 @@ function EmptyState() {
       direction="column"
       align="center"
     >
-      <Heading mb={4}> You haven`&apos;`t added any sites</Heading>
-      <Text mb={8}>Welcome 👋🏼 Let`&apos;`s get started</Text>
+      <Heading mb={4}> You haven&apos;t added any sites</Heading>
+      <Text mb={8}>Welcome 👋🏼 Let&apos;s get started</Text>
 
       <AddSiteModal>Add your first site</AddSiteModal>
     </Flex>
