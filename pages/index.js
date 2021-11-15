@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { UseAuth } from "@/lib/auth";
-import { Button, Flex, Link } from "@chakra-ui/react";
-import { CompanyLogo } from "@/lib/logoIcon";
+import { Button, Flex, Stack } from "@chakra-ui/react";
+import { CompanyLogo, GithubLogo, GoogleLogo } from "@/lib/logoIcon";
 
 export default function Home() {
   const auth = UseAuth();
@@ -32,9 +32,36 @@ export default function Home() {
         h="100vh"
       >
         <CompanyLogo boxSize={24} />
-        <Button m={4} size="sm" onClick={() => auth.signInWithGithub()}>
-          sign in
-        </Button>
+        <Stack direction="column" spacing={"8"}>
+          <Button
+            onClick={() => auth.signInWithGithub()}
+            backgroundColor="gray.900"
+            color="white"
+            leftIcon={<GithubLogo boxSize="10" mt="2" />}
+            _hover={{ backgroundColor: "gray.700" }}
+            _active={{
+              backgroundColor: "gray.800",
+              transform: "scale(0.95)",
+            }}
+            variant="ghost"
+          >
+            Sign In with Github
+          </Button>
+          <Button
+            onClick={() => auth.signInWithGoogle()}
+            backgroundColor="white"
+            color="gray.900"
+            leftIcon={<GoogleLogo boxSize="9" mt="4" />}
+            _hover={{ bg: "gray.100" }}
+            _active={{
+              bg: "gray.100",
+              transform: "scale(0.95)",
+            }}
+            variant="ghost"
+          >
+            Sign In with Google
+          </Button>
+        </Stack>
       </Flex>
     </div>
   );
